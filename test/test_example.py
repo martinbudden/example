@@ -7,7 +7,7 @@ import unittest
 from example import example
 
 
-class exampleTestCase(unittest.TestCase):
+class ExampleTestCase(unittest.TestCase):
 
     def setUp(self):
         pass
@@ -17,7 +17,16 @@ class exampleTestCase(unittest.TestCase):
 
     def testExample(self):
         """Test example function."""
-        self.assertEqual(example.example_function(), True)
+        result = example.example_function(True)
+        expected = True
+        self.assertEqual(result, expected)
+        self.assertTrue(result)
+
+        self.assertEqual(example.example_function(False), False)
+
+
+
+
 
 
 if __name__ == "__main__":

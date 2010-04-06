@@ -1,1 +1,4 @@
 *.pyc
+.figleaf
+interesting_files.txt
+html/*

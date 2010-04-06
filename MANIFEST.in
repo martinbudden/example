@@ -1,3 +1,4 @@
-include Makefile README CHANGES
+include Makefile README.md CHANGELOG
+recursive-include example *
 recursive-include data *
 recursive-include test *
