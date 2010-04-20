@@ -5,6 +5,7 @@
 Example
 """
 
+from optparse import OptionParser
 
 
 def example_function(param):
@@ -18,13 +19,29 @@ def example_function(param):
     return param
 
 
-def main():
-    parser = OptionParser()
-    #parser.add_option("-f","--file",dest="filename",help="write report to FILE",metavar="FILE")
-    #parser.add_option("-d","--date",dest="date",help="published DATE",metavar="DATE")
-    parser.add_option("-v", action="store_true", dest="verbose", default=False, help="print status messages to stdout")
+def process_options(arglist=None):
+    """
+    Process options passed either via arglist or via command line args.
+    """
 
-    (options,args) = parser.parse_args()
+    parser = OptionParser(arglist)
+    #parser.add_option("-f","--file",dest="filename",
+    #                  help="write report to FILE",metavar="FILE")
+    #parser.add_option("-d","--date",dest="date",
+    #                  help="published DATE",metavar="DATE")
+    parser.add_option("-v", action="store_true", dest="verbose", default=False,
+                      help="print status messages to stdout")
+
+    (options, args) = parser.parse_args()
+    return options, args
+
+
+def main():
+    """
+    Parse options and call example function.
+    """
+
+    (options, args) = process_options()
     if len(args) == 0:
         param = ""
     else:
