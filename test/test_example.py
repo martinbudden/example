@@ -1,5 +1,5 @@
 """
-WikiInfo test module.
+Example test module.
 """
 
 import unittest
@@ -19,12 +19,10 @@ class ExampleTestCase(unittest.TestCase):
 
     def testExample(self):
         """Test example function."""
-        print "====testing===="
         result = example.example_function(True)
         expected = True
         self.assertEqual(result, expected)
         self.assertTrue(result)
-        #self.assertTrue(False)
 
 
 if __name__ == "__main__":
